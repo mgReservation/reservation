@@ -2,6 +2,7 @@ package com.superman.reservationtest.Service;
 
 import com.superman.reservationtest.Entity.Theater;
 import com.superman.reservationtest.Repository.TheaterRepository;
+import com.superman.reservationtest.Vo.TheaterVO;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,11 @@ public class TheaterService {
         return "success";
     }
 
-    //find해야함
+    public Theater findById (Long id){ 
+        Theater theater = theaterRepository.findById(id).get();
+
+        TheaterVO theaterVO = new TheaterVO(theater.getName());
+
+        return theater;
+    }
 }

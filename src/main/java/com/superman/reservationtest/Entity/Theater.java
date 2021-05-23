@@ -27,7 +27,7 @@ public class Theater {
     private MovieTheater movieTheater;
 
     @Column
-    private Long name;
+    private String name;
 
     @OneToMany(mappedBy = "theater")
     private final List<Seat> seatList = new ArrayList<>();
