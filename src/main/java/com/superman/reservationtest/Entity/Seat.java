@@ -8,19 +8,25 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Seat {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seatId;
 
     @ManyToOne
-    @JoinColumn(name = "userId")
-    private User user;
+    @JoinColumn(name = "userSeatMapperId")
+    private UserSeatMapper userSeatMapper;
 
     @ManyToOne
     @JoinColumn(name="theaterId")

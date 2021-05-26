@@ -10,12 +10,18 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class RunningTime {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long runningTimeId;
